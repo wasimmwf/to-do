@@ -5,7 +5,7 @@ Download heroku cli
 heroku login
 
 pip install gunicorn
-pip freeze requirements.txt        ( To make file : pip freeze >  requirements.txt )
+pip freeze requirements.txt        ( To make file : pip freeze >  requirements.txt. Make sure gunicorn command is there )
 Procfile
 web:gunicorn app:app
 
