@@ -1,17 +1,18 @@
 pipeline {
-    agent any 
+    agent none
     stages {
-        stage('Hello World') {
+        ...
+            stage("Build Docker Image") {
+            agent any
+            environment {
+        HOME = "${env.WORKSPACE}"
+        }
             steps {
-                sh '''
-                docker --version
-                python --version
-                docker build -t my_flask_image_1 .
-                docker run -i -p 5000:5000 my_flask_image_1
-                ls -ltr
-
-                '''
+               script {
+                dockerImage = docker.build("<docker image name>:${env.BUILD_ID}")
+               }
             }
         }
+        ...
     }
 }
