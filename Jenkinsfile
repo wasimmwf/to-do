@@ -4,9 +4,12 @@ pipeline {
         stage('Hello World') {
             steps {
                 sh '''
+                ls ltr
                 docker --version
                 python --version
                 docker build -t my_flask_image_1 .
+                docker run -i -p 5000:5000 my_flask_image_1
+
                 '''
             }
         }
