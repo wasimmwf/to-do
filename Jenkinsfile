@@ -6,7 +6,7 @@ pipeline {
                 sh '''
                 docker --version
                 python --version
-                docker build -t my_flask_image_ .
+                docker build -t my_flask_image_1 .
             }
         }
     }
