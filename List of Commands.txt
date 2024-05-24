@@ -7,7 +7,7 @@ heroku login
 pip install gunicorn
 pip freeze requirements.txt        ( To make file : pip freeze >  requirements.txt. Make sure gunicorn command is there )
 Procfile
-web:gunicorn app:app
+web:gunicorn app:app   (first name is app name. here app.py)
 
 git init
 git add .
