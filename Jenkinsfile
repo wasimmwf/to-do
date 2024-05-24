@@ -1,14 +1,16 @@
 pipeline {
-    agent any
+    agent any 
     stages {
-        stage('Build') {
+        stage('Hello World') {
             steps {
-                sh 'docker build . -t todo-app'
-            }
-        }
-        stage('Run') {
-            steps {
-                sh 'docker run -d -p 5000:5000 todo-app'
+                sh '''
+                docker --version
+                python --version
+                docker build -t my_flask_image_1 .
+                docker run -i -p 5000:5000 my_flask_image_1
+                ls -ltr
+
+                '''
             }
         }
     }
